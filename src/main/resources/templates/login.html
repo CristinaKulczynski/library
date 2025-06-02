@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+
+        <form th:action="@{/login}" method="post" autocomplete="off">
+
+            <div>
+                <label for="username">E-mail:</label>
+
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    placeholder="Digite seu e-mail" 
+                    required 
+                    autocomplete="off" />
+            </div>
+
+            <div>
+                <label for="password">Senha:</label>
+
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Digite sua senha" 
+                    required 
+                    autocomplete="off" />
+            </div>
+
+            <div>
+                <button type="submit">Entrar</button>
+            </div>
+        </form>
+
+        <div th:if="${param.error}">
+            <p style="color: red;">E-mail ou senha inválidos.</p>
+        </div>
+        <div th:if="${param.logout}">
+            <p style="color: green;">Você saiu com sucesso.</p>
+        </div>
+        <div th:if="${param.registered}">
+            <p style="color: green;">Cadastro realizado. Faça login.</p>
+        </div>
+
+        <p>Não tem cadastro? <a th:href="@{/register}">Criar cadastro</a></p>
+    </div>
+</body>
+</html>

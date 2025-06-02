@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #276a47;
+}
+
+p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+a {
+    color: #2E8B57;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid #CCC;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.voltar {
+    display: block;
+    width: 80%;
+    margin: 0 auto 20px auto;
+    text-align: left;
+    font-size: 14px;
+}
+
+
+#availTable {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+#availTable th,
+#availTable td {
+    border: 1px solid #CCC;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+#availTable th {
+    background-color: #f2f2f2;
+}
+
+#availTable tbody tr {
+    cursor: pointer;
+}
+
+
+#availTable tbody tr.selected {
+    background-color: #d0e9ff;
+}
+
+
+.empty-message {
+    text-align: center;
+    color: #888;
+}
+
+
+.voltar {
+    width: 80%;
+    margin: 20px auto;
+}
+
+
+.reservar-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.reservation-block {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reservation-block label {
+    font-weight: bold;
+    flex: 0 0 auto;
+}
+
+#selectedBook {
+    flex: 1;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+#reserveBtn {
+    padding: 6px 12px;
+    flex: 0 0 auto;
+    max-width: 120px;
+}
+
+
+/*--------------------------------------------------------------------*/
+
+#availTable,
+#returnTable {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+#availTable th, #availTable td,
+#returnTable th, #returnTable td {
+    border: 1px solid #CCC;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+#availTable th, #returnTable th {
+    background-color: #f2f2f2;
+}
+
+#availTable tbody tr,
+#returnTable tbody tr {
+    cursor: pointer;
+}
+
+#availTable tbody tr.selected,
+#returnTable tbody tr.selected {
+    background-color: #d0e9ff;
+}
+
+
+.empty-message {
+    text-align: center;
+    color: #888;
+}
+
+
+.voltar {
+    width: 80%;
+    margin: 20px auto;
+}
+
+
+.reservar-title,
+.return-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.reservation-block {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reservation-block label {
+    font-weight: bold;
+    flex: 0 0 auto;
+}
+
+#selectedBook,
+#selectedReturnBook {
+    flex: 1;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+
+#reserveBtn,
+#returnBtn {
+    padding: 6px 12px;
+    flex: 0 0 auto;
+       width: 120px; 
+}

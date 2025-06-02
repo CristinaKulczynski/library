@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Todos os Livros</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <style>
+        table tr { cursor: pointer; }
+        table tr.selected { background-color: #d0e9ff; }
+    </style>
+</head>
+<body>
+    <div class="voltar">
+        <a th:href="@{/}">&larr; Voltar à Home</a>
+    </div>
+
+    <h2>Listagem de Todos os Livros</h2>
+
+    <table id="booksTable">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Código</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="book : ${books}" th:attr="data-code=${book.code}">
+                <td th:text="${book.name}">NOME DO LIVRO</td>
+                <td th:text="${book.code}">CÓDIGO</td>
+                <td>
+                    <span th:if="${book.booked == 1}">Reservado</span>
+                    <span th:if="${book.booked == 0}">Disponível</span>
+                </td>
+            </tr>
+            <tr th:if="${books.empty}">
+                <td colspan="3" style="text-align:center; color:#888;">
+                    Nenhum livro encontrado.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script th:src="@{/js/books-selection.js}"></script>
+</body>
+</html>
+

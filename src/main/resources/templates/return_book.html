@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Return Book</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+
+    <!-- Meta tags para CSRF -->
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+<body>
+    <div class="voltar">
+        <a th:href="@{/}">&larr; Voltar à Home</a>
+    </div>
+
+    <h2 class="return-title">Devolver Livros (Todos)</h2>
+
+    <div th:if="${param.error}" style="color:red; text-align:center; margin-bottom:10px;">
+        <p th:text="${errorMsg}">Não foi possível devolver o livro selecionado.</p>
+    </div>
+
+    <table id="returnTable">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr th:each="book : ${books}"
+                th:attr="data-code=${book.code}, data-name=${book.name}">
+                <td th:text="${book.code}">CÓDIGO</td>
+                <td th:text="${book.name}">NOME DO LIVRO</td>
+                <td>Reservado</td>
+            </tr>
+
+            <tr th:if="${books.empty}">
+                <td colspan="3" class="empty-message">
+                    Não há livros reservados para devolver.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="reservation-block">
+        <label for="selectedReturnBook">Livro selecionado:</label>
+        <input type="text"
+               id="selectedReturnBook"
+               readonly
+               placeholder="Clique em um livro acima" />
+        <button id="returnBtn" disabled>Devolver</button>
+    </div>
+
+    <script th:src="@{/js/return-selection.js}"></script>
+</body>
+</html>
